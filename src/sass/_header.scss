@@ -1,4 +1,7 @@
 header {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
     display: flex;
     justify-content: center;
     background-color: #000075;
@@ -12,5 +15,6 @@ header {
     }
     button{
         padding: 5px;
+        cursor: pointer;
     }
 }
