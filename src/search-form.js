@@ -67,7 +67,8 @@ function renderCard(card) {
         downloads,
       }) => {
         return `<div class="photo-card">
-    <a class="image-link" href="${largeImageURL}"><img class="gallery__image" src="${webformatURL}" alt="${tags}" loading="lazy" width="340" height="240"/></a>
+    <a class="image-link" href="${largeImageURL}">
+    <img class="gallery-image" src="${webformatURL}" alt="${tags}" loading="lazy" height="240px"/>
     <div class="info">
       <p class="info-item">
         <b>Likes</b>
@@ -86,6 +87,7 @@ function renderCard(card) {
         ${downloads}
       </p>
     </div>
+    </a>
   </div>
   `;
   }).join('');

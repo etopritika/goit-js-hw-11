@@ -7,6 +7,7 @@
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 ul {
@@ -24,7 +25,8 @@ section {
 }
 
 .container {
-  width: 1400px;
+  max-width: 1400px;
+
   padding-left: 10px;
   padding-right: 10px;
   margin-right: auto;
