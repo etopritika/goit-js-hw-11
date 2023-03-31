@@ -1,20 +1,31 @@
+$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+$animation-duration: 250ms;
+
 header {
-    position: fixed;
-    z-index: 2;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: #000075;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #000075;
 }
 
 .search-form {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    input{
-        padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  input {
+    padding: 5px;
+  }
+  button {
+    cursor: pointer;
+    background-color: #0707dc;
+    padding: 7px 5px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: transform $animation-duration $timing-function;
+    &:hover {
+      transform: scale(0.95);
     }
-    button{
-        padding: 5px;
-        cursor: pointer;
-    }
+  }
 }

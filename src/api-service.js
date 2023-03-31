@@ -33,7 +33,7 @@ export default class ApiService {
             'Sorry, there are no images matching your search query. Please try again.'
           );
         }
-        return {totalHits, hits};
+        return { totalHits, hits };
       })
       .catch(error =>
         Notiflix.Notify.warning(
@@ -41,8 +41,6 @@ export default class ApiService {
         )
       );
   }
-
-
 
   incrementPage() {
     this.page = this.page + 1;

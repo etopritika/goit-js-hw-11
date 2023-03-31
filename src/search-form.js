@@ -90,12 +90,13 @@ function renderCard(card) {
     </a>
   </div>
   `;
-  }).join('');
+      }
+    )
+    .join('');
   gallery.insertAdjacentHTML('beforeEnd', cardListMarkup);
 }
 
-const lightbox = new SimpleLightbox(".image-link", {
-  captionsData: "alt",
+const lightbox = new SimpleLightbox('.image-link', {
+  captionsData: 'alt',
   captionDelay: 250,
 });
-
