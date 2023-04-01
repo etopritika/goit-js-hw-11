@@ -9,7 +9,6 @@ const loadMoreBtn = document.querySelector('.load-more');
 
 form.addEventListener('submit', onSearch);
 loadMoreBtn.addEventListener('click', onLoadMore);
-// gallery.addEventListener("click", onGalleryContainerClick)
 
 async function onSearch(e) {
   e.preventDefault();
@@ -23,13 +22,29 @@ async function onSearch(e) {
     .fetchArticles()
     .then(({ totalHits, hits }) => {
       renderCard(hits);
+      if (hits.length === 0) {
+        return;
+      }
       Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
     })
     .catch(err => console.log(err));
   isVisibleBtn();
   // lightbox.open();
   lightbox.refresh();
+
+  // pageScroll();
 }
+
+// function pageScroll() {
+//   const { height: cardHeight } = document
+//     .querySelector('.gallery')
+//     .firstElementChild.getBoundingClientRect();
+
+//   window.scrollBy({
+//     top: cardHeight * 2,
+//     behavior: 'smooth',
+//   });
+// }
 
 function isVisibleBtn() {
   if (gallery.innerHTML === '') {
@@ -48,6 +63,7 @@ async function onLoadMore() {
     await apiService.fetchArticles().then(({ hits }) => {
       renderCard(hits);
     });
+    // pageScroll();
     lightbox.refresh();
   } catch (error) {
     loadMoreBtn.classList.add('is-hidden');
