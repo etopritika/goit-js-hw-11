@@ -35,16 +35,16 @@ async function onSearch(e) {
   // pageScroll();
 }
 
-// function pageScroll() {
-//   const { height: cardHeight } = document
-//     .querySelector('.gallery')
-//     .firstElementChild.getBoundingClientRect();
+function pageScroll() {
+  const { height: cardHeight } = document
+    .querySelector('.gallery')
+    .firstElementChild.getBoundingClientRect();
 
-//   window.scrollBy({
-//     top: cardHeight * 2,
-//     behavior: 'smooth',
-//   });
-// }
+  window.scrollBy({
+    top: cardHeight * 2,
+    behavior: 'smooth',
+  });
+}
 
 function isVisibleBtn() {
   if (gallery.innerHTML === '') {
@@ -63,7 +63,7 @@ async function onLoadMore() {
     await apiService.fetchArticles().then(({ hits }) => {
       renderCard(hits);
     });
-    // pageScroll();
+    pageScroll();
     lightbox.refresh();
   } catch (error) {
     loadMoreBtn.classList.add('is-hidden');
