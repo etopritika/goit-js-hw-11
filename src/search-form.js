@@ -2,6 +2,9 @@ import ApiService from './api-service';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import imageCardTpl from "./templates/image-card.hbs";
+
+
 const apiService = new ApiService();
 const form = document.querySelector('#search-form');
 const gallery = document.querySelector('.gallery');
@@ -29,10 +32,7 @@ async function onSearch(e) {
     })
     .catch(err => console.log(err));
   isVisibleBtn();
-  // lightbox.open();
   lightbox.refresh();
-
-  // pageScroll();
 }
 
 function pageScroll() {
