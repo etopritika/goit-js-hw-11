@@ -3,7 +3,8 @@ import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import imageCardTpl from "./templates/image-card.hbs";
-
+// const template = Handlebars.compile(imageCardTpl);
+// console.log(template);
 
 const apiService = new ApiService();
 const form = document.querySelector('#search-form');
